@@ -5,19 +5,22 @@
  */
 package paquete11;
 
+import java.util.Random;
 
-public class APIAmazonMovie implements APIMovie{
-    
+
+public class APIAmazonMovie implements APIMovie {
+
     private String apiKey;
-    
+    private Random random = new Random();
+
     @Override
-    public void establecerApiKey(String ak){
-        apiKey = ak+"AMAZON909090";
+    public void establecerApiKey(String ak) {
+        apiKey = ak + "AMAZON" + random.nextInt(900000) + 100000;
     }
-    
+
     @Override
-    public String obtenerApiKey(){
+    public String obtenerApiKey() {
         return apiKey;
     }
-    
+
 }
