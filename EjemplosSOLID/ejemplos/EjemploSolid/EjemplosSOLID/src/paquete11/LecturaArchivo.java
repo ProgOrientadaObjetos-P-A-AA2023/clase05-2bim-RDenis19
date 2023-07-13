@@ -74,21 +74,22 @@ public class LecturaArchivo {
                         lineaPartes.get(2));
                 
                 lista.add(usuario);
-
+                
             } 
         }
     }
-
+    
     public ArrayList<UsuarioMovie> obtenerLista() {
-
+    
         return lista;
     }
-
+    
     public void cerrarArchivo() {
         if (entrada != null) {
             entrada.close();
+            
         } 
-
+        
     }
-
+    
 }

@@ -61,7 +61,7 @@ public class Principal {
                     gp3.establecerUrl("http://dqw2e2wd=");
                     generador.add(gp3);
                     break;
-                case "StarPlus":
+                case "Startplus":
                     APIStarplus api4 = new APIStarplus();
                     api4.establecerApiKey("123123");
 
