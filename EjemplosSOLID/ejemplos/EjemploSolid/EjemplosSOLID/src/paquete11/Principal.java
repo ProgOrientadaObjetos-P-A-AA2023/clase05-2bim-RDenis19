@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 
 public class Principal {
-
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         /*
         Usar el txt llamado usuarios.txt; por cada línea del archivo
         crer un API en función de su servicio; además el API ahora genera
@@ -18,7 +17,7 @@ public class Principal {
         Random); la url final debe contener el tipo de servicio y el user
         Por cada objeto de tipo GeneradoPelicula presentar la información 
         a través de un toString
-         */
+        */
 
         ArrayList<GeneradorPelicula> generador = new ArrayList<>();
         ArrayList<UsuarioMovie> users;
@@ -41,6 +40,17 @@ public class Principal {
                     gp1.establecerUrl("http://a21321wsa=");
                     generador.add(gp1);
                     break;
+            }
+        }
+        for (GeneradorPelicula gp : generador) {
+            System.out.println(gp);
+           
+        }
+        System.out.println("=====================================================");
+        ArrayList<GeneradorPelicula> generadorDisney = new ArrayList<>();
+
+        for (UsuarioMovie user : users) {
+            switch (user.obtenerTipo()) {
                 case "Disney":
                     APIDisney api2 = new APIDisney();
                     api2.establecerApiKey("214134");
@@ -49,8 +59,19 @@ public class Principal {
                     gp2.establecerLlave(api2);
                     gp2.establecerUser(user.obtenerUser());
                     gp2.establecerUrl("http://apasadsadq2=");
-                    generador.add(gp2);
+                    generadorDisney.add(gp2);
                     break;
+            }
+        }
+        for (GeneradorPelicula gp : generadorDisney) {
+            System.out.println(gp);
+        }
+        
+        System.out.println("=====================================================");
+        ArrayList<GeneradorPelicula> generadorAmazon = new ArrayList<>();
+
+        for (UsuarioMovie user : users) {
+            switch (user.obtenerTipo()) {
                 case "Amazon":
                     APIAmazonMovie api3 = new APIAmazonMovie();
                     api3.establecerApiKey("123123");
@@ -59,21 +80,32 @@ public class Principal {
                     gp3.establecerLlave(api3);
                     gp3.establecerUser(user.obtenerUser());
                     gp3.establecerUrl("http://dqw2e2wd=");
-                    generador.add(gp3);
+                    generadorAmazon.add(gp3);
                     break;
+            }
+        }
+        for (GeneradorPelicula gp : generadorAmazon) {
+            System.out.println(gp);
+        }
+        
+        System.out.println("=====================================================");
+        ArrayList<GeneradorPelicula> generadorStarplus = new ArrayList<>();
+
+        for (UsuarioMovie user : users) {
+            switch (user.obtenerTipo()) {
                 case "Startplus":
                     APIStarplus api4 = new APIStarplus();
-                    api4.establecerApiKey("123123");
+                    api4.establecerApiKey("12243242");
 
                     GeneradorPelicula gp4 = new GeneradorPelicula();
                     gp4.establecerLlave(api4);
                     gp4.establecerUser(user.obtenerUser());
                     gp4.establecerUrl("http://Uty7tgt=");
-                    generador.add(gp4);
+                    generadorStarplus.add(gp4);
                     break;
             }
         }
-        for (GeneradorPelicula gp : generador) {
+        for (GeneradorPelicula gp : generadorStarplus) {
             System.out.println(gp);
         }
     }
